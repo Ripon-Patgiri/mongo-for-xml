@@ -26,3 +26,18 @@ client.connect((err) => {
     console.log("Connected to MongoDB");
   }
 });
+
+// Insert Data into a Collection in Database
+const db = client.db("dbname");
+const collection = db.collection("collectionname");
+
+collection.insertOne(jsData, (err, result) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log("Data inserted into MongoDB");
+  }
+});
+
+// Close Connection
+client.close();
