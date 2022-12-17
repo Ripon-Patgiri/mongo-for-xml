@@ -7,6 +7,15 @@ const MongoClient = require("mongodb").MongoClient;
 const xmlData = fs.readFileSync("./bookstore.xml");
 
 // Use xml2js module to convert XML data to a JavaScript Object
+const jsData = xml2js.parseString(xmlData, (err, result) => {
+  if (err) {
+    console.error(err);
+  } else {
+    return result;
+  }
+});
+
+// Connect to MongoDB Database
 const url = "mongodb://localhost:27017";
 const client = new MongoClient(url, { useUnifiedTopology: true });
 
