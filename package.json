@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Ripon-Patgiri/mongo-for-xml#readme",
   "dependencies": {
-    "mongodb": "^4.12.1"
-  }
+    "mongodb": "^4.12.1",
+    "xml2js": "^0.4.23"
+  },
+  "type": "module"
 }
