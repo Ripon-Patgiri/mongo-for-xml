@@ -20,6 +20,5 @@
   "dependencies": {
     "mongodb": "^4.12.1",
     "xml2js": "^0.4.23"
-  },
-  "type": "module"
+  }
 }
