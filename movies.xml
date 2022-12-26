@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movies>
+  <movie>
+    <title>The Shawshank Redemption</title>
+    <year>1994</year>
+    <genre>Drama</genre>
+    <director>Frank Darabont</director>
+    <actors>
+      <actor>Tim Robbins</actor>
+      <actor>Morgan Freeman</actor>
+      <actor>Bob Gunton</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>The Godfather</title>
+    <year>1972</year>
+    <genre>Crime, Drama</genre>
+    <director>Francis Ford Coppola</director>
+    <actors>
+      <actor>Marlon Brando</actor>
+      <actor>Al Pacino</actor>
+      <actor>James Caan</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>The Godfather: Part II</title>
+    <year>1974</year>
+    <genre>Crime, Drama</genre>
+    <director>Francis Ford Coppola</director>
+    <actors>
+      <actor>Marlon Brando</actor>
+      <actor>Al Pacino</actor>
+      <actor>Robert De Niro</actor>
+    </actors>
+  </movie>
+</movies>
