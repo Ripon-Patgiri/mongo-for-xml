@@ -1,45 +1,36 @@
-// Import Required Modules
-import { readFileSync } from "fs";
-import { parseString } from "xml2js";
-import { MongoClient } from "mongodb";
+// Import xml2js  library
+const xml2js = require('xml2js');
 
-// Read the XML Data
-const xmlData = readFileSync("./bookstore.xml");
+// Read XML File and Parse it using 'xml2js' library
+const fs = require('fs');
 
-// Use xml2js module to convert XML data to a JavaScript Object
-const jsData = parseString(xmlData, (err, result) => {
-  if (err) {
-    console.error(err);
-  } else {
-    return result;
-  }
+fs.readFile('movies.xml', (err, data) => {
+  if (err) throw err;
+
+  xml2js.parseString(data, (err, result) => {
+    if (err) throw err;
+
+    console.log(result);
+  });
 });
 
-// Connect to MongoDB Database
-const url = "mongodb://localhost:27017";
-let client;
-async function connectToDatabase() {
-  client = new MongoClient(url);
-  try {
-    await client.connect();
-    console.log("Connected to the database");
-  } catch (err) {
-    console.error(err);
-  }
-}
-connectToDatabase();
+// Using JSON.stringify() to convert the object to a JSON Document
+const json = JSON.stringify(result);
 
-// Insert Data into a Collection in Database
-const db = client.db("adbd_project");
-const collection = db.collection("adbd_xml");
+// Connect to a MongoDB Server
+const MongoClient = require('mongodb').MongoClient;
 
-collection.insertOne(jsData, (err, result) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log("Data inserted into MongoDB");
-  }
+const url = 'mongodb://localhost:27017';
+const dbName = 'myproject';
+
+MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+  if (err) throw err;
+
+  console.log('Connected to MongoDB server');
+
+  const db = client.db(dbName);
+
+  // Perform operations on the database here
+
+  client.close();
 });
-
-// Close Connection
-client.close();
