@@ -1,14 +1,39 @@
-//Import required Modules
-const MongoClient = require("mongodb").MongoClient;
+const { MongoClient } = require("mongodb");
 
-// Connect to MongoDB Database
-const url = "mongodb://localhost:27017";
-const client = new MongoClient(url, { useUnifiedTopology: true });
+async function main() {
+  // Connection URI for the MongoDB Database
+  const uri =
+    "mongodb+srv://ripon_p:ripon123@cluster0.zf3lzix.mongodb.net/?retryWrites=true&w=majority";
 
-client.connect((err) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log("Connected to MongoDB");
+  // Create a new MongoClient object
+  const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+
+  try {
+    // Connect to the MongoDB database
+    await client.connect();
+
+    // Get a reference to the collection
+    const collection = client.db("adbd").collection("xml_movies");
+
+    // const query = { "movies.movie.year" : "1994" };
+    const cursor = collection.find();
+    await cursor.forEach((result) => {
+      result.movies.movie.forEach((answer) => {
+        if(answer.year[0] === "1994") {
+          console.log(answer.title[0]);
+        }
+      });
+    });
+  } catch (e) {
+    console.error(e);
+  } finally {
+    // Close the connection to the MongoDB database
+    await client.close();
   }
-});
+}
+
+// Run the main function and catch any errors that may occur
+main().catch(console.error);
