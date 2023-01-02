@@ -33,4 +33,105 @@
       <actor>Robert De Niro</actor>
     </actors>
   </movie>
+  <movie>
+    <title>The Dark Knight</title>
+    <year>2008</year>
+    <genre>Action, Crime, Drama</genre>
+    <director>Christopher Nolan</director>
+    <actors>
+      <actor>Christian Bale</actor>
+      <actor>Heath Ledger</actor>
+      <actor>Aaron Eckhart</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>The Prestige</title>
+    <year>2006</year>
+    <genre>Drama, Mystery, Thriller</genre>
+    <director>Christopher Nolan</director>
+    <actors>
+      <actor>Hugh Jackman</actor>
+      <actor>Christian Bale</actor>
+      <actor>Scarlett Johansson</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>Inception</title>
+    <year>2010</year>
+    <genre>Action, Adventure, Sci-Fi</genre>
+    <director>Christopher Nolan</director>
+    <actors>
+      <actor>Leonardo DiCaprio</actor>
+      <actor>Joseph Gordon-Levitt</actor>
+      <actor>Ellen Page</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>Fight Club</title>
+    <year>1999</year>
+    <genre>Drama</genre>
+    <director>David Fincher</director>
+    <actors>
+      <actor>Brad Pitt</actor>
+      <actor>Edward Norton</actor>
+      <actor>Meat Loaf</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>Pulp Fiction</title>
+    <year>1994</year>
+    <genre>Crime, Drama</genre>
+    <director>Quentin Tarantino</director>
+    <actors>
+      <actor>John Travolta</actor>
+      <actor>Samuel L. Jackson</actor>
+      <actor>Uma Thurman</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>The Green Mile</title>
+    <year>1999</year>
+    <genre>Crime, Drama, Fantasy</genre>
+    <director>Frank Darabont</director>
+    <actors>
+      <actor>Tom Hanks</actor>
+      <actor>David Morse</actor>
+      <actor>Michael Clarke Duncan</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>Interstellar</title>
+    <year>2014</year>
+    <genre>Adventure, Drama, Sci-Fi</genre>
+    <director>Christopher Nolan</director>
+    <actors>
+      <actor>Matthew McConaughey</actor>
+      <actor>Anne Hathaway</actor>
+      <actor>Jessica Chastain</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>The Matrix</title>
+    <year>1999</year>
+    <genre>Action, Sci-Fi</genre>
+    <director>Lana Wachowski</director>
+    <director>Lilly Wachowski</director>
+    <actors>
+      <actor>Keanu Reeves</actor>
+      <actor>Laurence Fishburne</actor>
+      <actor>Carrie-Anne Moss</actor>
+    </actors>
+  </movie>
+  <movie>
+    <title>Avatar</title>
+    <year>2009</year>
+    <genre>Action, Adventure, Fantasy</genre>
+    <director>James Cameron</director>
+    <actors>
+      <actor>Sam Worthington</actor>
+      <actor>Zoe Saldana</actor>
+      <actor>Sigourney Weaver</actor>
+    </actors>
+  </movie>
+
 </movies>
