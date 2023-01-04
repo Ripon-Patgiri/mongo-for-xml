@@ -18,12 +18,65 @@ async function main() {
     // Get a reference to the collection
     const collection = client.db("adbd").collection("xml_movies");
 
-    // const query = { "movies.movie.year" : "1994" };
-    const cursor = collection.find();
-    await cursor.forEach((result) => {
+    const cursor1 = collection.find();
+    console.log("List of All Movies : ");
+    await cursor1.forEach((result) => {
       result.movies.movie.forEach((answer) => {
-        if(answer.year[0] === "1994") {
+        console.log(answer.title[0]);
+      });
+    });
+
+    const cursor2 = collection.find();
+    console.log("\nMovies Released in 1994 : ");
+    await cursor2.forEach((result) => {
+      result.movies.movie.forEach((answer) => {
+        if (answer.year[0] === "1994") {
           console.log(answer.title[0]);
+        }
+      });
+    });
+
+    const cursor3 = collection.find();
+    console.log("\nMovies directed by Christopher Nolan :");
+    await cursor3.forEach((result) => {
+      result.movies.movie.forEach((answer) => {
+        if (answer.director[0] === "Christopher Nolan") {
+          console.log(answer.title[0]);
+        }
+      });
+    });
+
+    const cursor4 = collection.find();
+    console.log("\nMovies of the 'Drama' Genre :");
+    await cursor4.forEach((result) => {
+      result.movies.movie.forEach((answer) => {
+        if (answer.genre[0].includes("Drama")) {
+          console.log(answer.title[0]);
+        }
+      });
+    });
+
+    const cursor5 = collection.find();
+    console.log("\nMovies starting with 'The' : ");
+    await cursor5.forEach((result) => {
+      result.movies.movie.forEach((answer) => {
+        if (/^The/.test(answer.title[0])) {
+          console.log(answer.title[0]);
+        }
+      });
+    });
+
+    const actorName = "Marlon Brando";
+    const cursor6 = collection.find();
+    console.log("\nMovies starring 'Marlon Brando' : ");
+    await cursor6.forEach((result) => {
+      result.movies.movie.forEach((answer) => {
+        var actors = answer.actors[0].actor;
+        for (var i = 0; i < actors.length; i++) {
+          if (actors[i] === actorName) {
+            console.log(answer.title[0]);
+            break;
+          }
         }
       });
     });
